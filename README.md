@@ -19,16 +19,27 @@ The main takeaways from working on this project were the importance of pseudocod
 ## Process
 The first step in creating this site was to create functions for each of the password criteria. Since the addEventListener was already hooked to the Generate Password button, all the password criteria functions were able to be called by clicking the button. In each of these functions the user response was recorded in a variable that was declared within each function's scope. Additionally, I console logged the response for each criteria to test the functions. 
 
-The next step was assigning character string sets to global variables. I declared variables for each of the password criteria: lowercase letters, uppercase letters, numbers, and special characters. In creating the special characters string, i had to use the escape character "\" to include the double quotes (") and the back-slash (\) characters. By separating the password criteria into multiple variables, I figured that I could concatenate the strings based on the user-desired password criteria.
+Shows the separation of tasks into different functions:
+
+![criteria functions](assets/images/criteria-fxns.png)
+
+The next step was assigning character string sets to global variables. I declared variables for each of the password criteria: lowercase letters, uppercase letters, numbers, and special characters. In creating the special characters string, i had to use the escape character "\\\" to include the double quotes (") and the back-slash (\\\) characters. By separating the password criteria into multiple variables, I figured that I could concatenate the strings based on the user-desired password criteria.
 
 The customizability aspect of the site was the next step. In the generatePassword function, I created variables to store the return values for each password criteria. Two other variables were created to store the final generated password (var finalString) and the character set (var charList) for the password generator to choose from - both of these were initially assigned empty strings, that way every time the user clicked the Generate Password button, these variables would effectively be reset to empty strings. 
 
 I then added if statements for each of the password criteria; if the user requested a certain criteria it would be concatenated to var charList. If none of the password criteria were requested, an alert would show up stating that the password should contain at least one of the presented criteria. After going through the if statements, a for loop would run based on the number of characters desired in the password. In each iteration, a random character would be chosen from var charList and concatenated to var finalString. After the final iteration, the generatePassword function returns var finalString containing the customized password. Finally, in the writePassword function, I set the textContent of the textarea element with the ID of "password" equal to the return value of generatePassword, which prints out the generated password into the text area.
 
 ## Usage
-instructions and examples for use
+To use this site, simply click the Generate Password button and follow the alert buttons that follow:
 
-include screenshots here
+![generate password](assets/gifs/random-password.gif)
+
+If you choose none of the presented password criteria, you will be presented with an alert telling you to select at least one of the criteria:
+
+![one criteria required](assets/gifs/one-crit-required.gif)
+
 
 ## License
-[choose a license](https://choosealicense.com/)
+© 2019 Trilogy Education Services, a 2U, Inc. brand. All Rights Reserved.
+
+Licensed under the [MIT](https://github.com/microsoft/vscode/blob/master/LICENSE.txt) License.
