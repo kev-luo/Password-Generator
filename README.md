@@ -12,8 +12,6 @@ The main takeaways from working on this project were the importance of pseudocod
 ## Table of Contents
 * Process
 * Usage
-* Credits
-* Contributing
 * License
 
 ## Process
