@@ -1,18 +1,40 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate"); // variable for button
+var lowerLetters = "abcdefghijklmnopqrstuvwxyz"; // variable for lowercase letters
+var upperLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"; // variable for uppercase letters
+var numbersList = "0123456789"; // variable for numberes
+var specialCharacters = " !\"\#$%&'()*+,-./:;<=>?@[\\\]^_`{|}~"; // variable for special characters
 
+// Add event listener to generate button
+generateBtn.addEventListener("click", writePassword);
 
 // Write password to the #password input
 function writePassword() {
-//   var password = generatePassword();
-//   var passwordText = document.querySelector("#password");
+    document.getElementById("password").textContent = generatePassword();
 
-//   passwordText.value = password;
-    pLength();
-    lCase();
-    uCase();
-    numeric();
-    sChar();
+    // var passwordText = document.querySelector("#password");
+    // generatePassword();
+    // passwordText.value = password;
+    // pLength();
+    // lCase();
+    // uCase();
+    // numeric();
+    // sChar();
+};
+
+// function to generate random string
+function generatePassword() {
+    var finalString = '';
+    var lengthy = pLength();
+    var littleL = lCase();
+    var bigL = uCase();
+    var numero = numeric();
+    var especial = sChar();
+    var charList = lowerLetters+upperLetters+numbersList+specialCharacters;
+    for (var i=0; i<passLength; i++) {
+        finalString += charList.charAt(Math.floor(Math.random() * charList.length));
+    };
+    return finalString;
 }
 
 // function for password length prompt
@@ -54,8 +76,8 @@ function sChar() {
 }
 
 
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+
+
 
 // add event listener when button is clicked. function should present series of prompts for password criteria
 // prompt for lowercase, uppercase, numeric, and/or special characters - must select at least one
